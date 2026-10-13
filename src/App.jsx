@@ -151,7 +151,7 @@ function Hero() {
         </div>
 
         <h1>
-          We turn bold ideas
+          sidhi web site
           <br />into <span className="gradient-text">digital reality.</span>
         </h1>
 
