@@ -117,7 +117,7 @@ function Navbar() {
     <header className="navbar">
       <a href="#home" className="brand" onClick={() => setOpen(false)}>
         <span className="brand-icon"><Code2 size={23} /></span>
-        <span>nexora<span className="brand-dot">.</span><small> DIGITAL STUDIO</small></span>
+        <span>Sidhi<span className="brand-dot">.</span><small> DIGITAL STUDIO</small></span>
       </a>
 
       <button
@@ -151,7 +151,7 @@ function Hero() {
         </div>
 
         <h1>
-          sidhi web Soltion
+          Sidhi ewb solution
           <br />into <span className="gradient-text">digital reality.</span>
         </h1>
 
