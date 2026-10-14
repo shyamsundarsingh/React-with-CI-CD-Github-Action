@@ -7,9 +7,9 @@ import {
   ArrowRight, Layers, Monitor
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "919876543210"; // Replace with your number
-const PHONE_NUMBER = "+91 98765 43210"; // Replace with your mobile
-const OFFICE_ADDRESS = "Your Office Address, Lucknow, Uttar Pradesh, India";
+const WHATSAPP_NUMBER = "919919366390"; // Replace with your number
+const PHONE_NUMBER = "+91 9919366390; // Replace with your mobile
+const OFFICE_ADDRESS = "Kasia, Kushingar, Uttar Pradesh, India";
 
 const services = [
   {
@@ -17,7 +17,7 @@ const services = [
     number: "01",
     title: "Web Development",
     description: "Fast, responsive websites and scalable web applications built for your business.",
-    tags: ["React", "Node.js", "MERN"]
+    tags: ["React", "Node.js", "MERN", "PHP", "Wordpress"]
   },
   {
     icon: Smartphone,
@@ -59,25 +59,25 @@ const services = [
 const projects = [
   {
     number: "01",
-    title: "E-Commerce",
+    title: "E-Commerce website",
     category: "E-commerce platform",
-    tech: "React · Node.js · MongoDB",
+    tech: "React · Node.js · MongoDB . PHP . MYSQL",
     style: "project-purple",
     icon: Layers
   },
   {
     number: "02",
-    title: "School Management System",
+    title: "School / College Software",
     category: "School ERP",
-    tech: "React · PHP · Mysql",
+    tech: "React · Node.js . MongoDB · PHP · MySQL",
     style: "project-blue",
     icon: Monitor
   },
   {
     number: "03",
-    title: "Orbit Connect",
+    title: "Bussiness website",
     category: "Business website",
-    tech: "React · Responsive UI",
+    tech: "React · Responsive UI . Node.js · PHP · MySQL",
     style: "project-orange",
     icon: Globe
   }
@@ -181,7 +181,7 @@ function Hero() {
         <div className="orbit orbit-two" />
         <div className="art-center">
           <Code2 size={66} strokeWidth={1.25} />
-          <span>BUILD THE YOUR BUSSINESS</span>
+          <span>BUILD THE FUTURE</span>
         </div>
         <div className="float-card float-top">
           <Zap size={19} />
@@ -334,8 +334,8 @@ function Contact() {
             <div className="contact-icon"><MessageCircle size={21} /></div>
             <div>
               <span>CALL / WHATSAPP</span>
-              <a href={`tel:${+919919366390.replace(/[^\d+]/g, "")}`}>{+919919366390}</a>
-              <a className="detail-link" href={`https://wa.me/${+919919366390}`} target="_blank" rel="noopener noreferrer">
+              <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>{PHONE_NUMBER}</a>
+              <a className="detail-link" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
                 Message us on WhatsApp <ArrowUpRight size={14} />
               </a>
             </div>
