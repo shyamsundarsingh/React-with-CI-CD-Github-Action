@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 const WHATSAPP_NUMBER = "919919366390"; // Replace with your number
-const PHONE_NUMBER = "+91 9919366390; // Replace with your mobile
+const PHONE_NUMBER = "+919919366390"; // Replace with your mobile
 const OFFICE_ADDRESS = "Kasia, Kushingar, Uttar Pradesh, India";
 
 const services = [
