@@ -59,7 +59,7 @@ const services = [
 const projects = [
   {
     number: "01",
-    title: "Nexa Commerce",
+    title: "E-Commerce",
     category: "E-commerce platform",
     tech: "React · Node.js · MongoDB",
     style: "project-purple",
@@ -67,9 +67,9 @@ const projects = [
   },
   {
     number: "02",
-    title: "Finora Dashboard",
-    category: "Business analytics",
-    tech: "React · REST API · Charts",
+    title: "School Management System",
+    category: "School ERP",
+    tech: "React · PHP · Mysql",
     style: "project-blue",
     icon: Monitor
   },
@@ -181,7 +181,7 @@ function Hero() {
         <div className="orbit orbit-two" />
         <div className="art-center">
           <Code2 size={66} strokeWidth={1.25} />
-          <span>BUILD THE FUTURE</span>
+          <span>BUILD THE YOUR BUSSINESS</span>
         </div>
         <div className="float-card float-top">
           <Zap size={19} />
@@ -211,14 +211,14 @@ function About() {
 
       <div className="about-content">
         <p>
+          SIDHI one of the top website design and web development Company With over 10 years of experience team, our expert team specializes in Web development and UI/UX Designing and App development with Search engine Optimization.
+        </p>
+        <p>
           We are a digital agency focused on creating useful, modern and
           dependable technology. From the first idea to launch day, we turn
           complex challenges into simple digital experiences.
         </p>
-        <p>
-          Our approach combines creative thinking, clean engineering and
-          a focus on the people who use what we build.
-        </p>
+        
         <a href="#contact" className="text-link">
           Let's talk about your idea <ArrowRight size={17} />
         </a>
@@ -312,7 +312,7 @@ function Portfolio() {
         })}
       </div>
       <p className="portfolio-note">
-        These are illustrative sample projects. Replace them with your real client work.
+        We build real projects for bussiness.
       </p>
     </section>
   );
@@ -334,8 +334,8 @@ function Contact() {
             <div className="contact-icon"><MessageCircle size={21} /></div>
             <div>
               <span>CALL / WHATSAPP</span>
-              <a href={`tel:${PHONE_NUMBER.replace(/[^\d+]/g, "")}`}>{PHONE_NUMBER}</a>
-              <a className="detail-link" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
+              <a href={`tel:${+919919366390.replace(/[^\d+]/g, "")}`}>{+919919366390}</a>
+              <a className="detail-link" href={`https://wa.me/${+919919366390}`} target="_blank" rel="noopener noreferrer">
                 Message us on WhatsApp <ArrowUpRight size={14} />
               </a>
             </div>
@@ -345,15 +345,8 @@ function Contact() {
             <div className="contact-icon"><Globe size={21} /></div>
             <div>
               <span>OUR OFFICE</span>
-              <p>{OFFICE_ADDRESS}</p>
-              <a
-                className="detail-link"
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(OFFICE_ADDRESS)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View location <ArrowUpRight size={14} />
-              </a>
+              <p>Sapaha Rd, Kasia Bazaar, Kushinagar, Uttar Pradesh 274402</p>
+              
             </div>
           </div>
         </div>
