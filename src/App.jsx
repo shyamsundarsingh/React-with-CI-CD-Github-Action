@@ -360,11 +360,11 @@ function Footer() {
     <footer className="footer section-wrap">
       <a href="#home" className="brand">
         <span className="brand-icon"><Code2 size={21} /></span>
-        <span>nexora<span className="brand-dot">.</span></span>
+        <span>Sidhi<span className="brand-dot">.</span></span>
       </a>
       <p>Thoughtful technology for a digital world.</p>
       <a href="#home" className="back-top">Back to top ↑</a>
-      <small>© {new Date().getFullYear()} Nexora Digital Studio.</small>
+      <small>© {new Date().getFullYear()} Sidhi Digital Studio.</small>
     </footer>
   );
 }
