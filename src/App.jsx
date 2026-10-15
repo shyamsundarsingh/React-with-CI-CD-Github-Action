@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Menu, X, ArrowUpRight, Code2, Smartphone,
   Palette, Cloud, Search, ShieldCheck,
@@ -9,49 +9,49 @@ import {
 
 const WHATSAPP_NUMBER = "919919366390"; // Replace with your number
 const PHONE_NUMBER = "+919919366390"; // Replace with your mobile
-const OFFICE_ADDRESS = "Kasia, Kushingar, Uttar Pradesh, India";
+const OFFICE_ADDRESS = "Sapaha Rd, Kasia Bazaar, Kushinagar, Uttar Pradesh 274402, India";
 
 const services = [
   {
     icon: Code2,
     number: "01",
-    title: "Web Development",
-    description: "Fast, responsive websites and scalable web applications built for your business.",
+    title: "Website Development",
+    description: "Responsive, fast business websites and web applications for businesses in Kushinagar, Maharajganj and Gopalganj.",
     tags: ["React", "Node.js", "MERN", "PHP", "Wordpress"]
   },
   {
     icon: Smartphone,
     number: "02",
-    title: "Mobile Applications",
-    description: "Intuitive mobile experiences that keep your customers connected anywhere.",
+    title: "School ERP & Education Software",
+    description: "School management software for student records, attendance, fees, exams and everyday administration.",
     tags: ["React Native", "Android"]
   },
   {
     icon: Palette,
     number: "03",
-    title: "UI/UX Design",
-    description: "Beautiful, thoughtful interfaces designed around real user needs.",
+    title: "Hospital Management Software",
+    description: "Digital workflows for patient registration, appointments, clinic administration and billing.",
     tags: ["Figma", "Prototyping"]
   },
   {
     icon: Cloud,
     number: "04",
-    title: "Cloud & DevOps",
-    description: "Reliable deployment pipelines, cloud infrastructure and automated workflows.",
+    title: "Billing & Inventory Software",
+    description: "Practical billing, invoice and inventory workflows for shops and growing businesses.",
     tags: ["AWS", "Docker", "CI/CD"]
   },
   {
     icon: Search,
     number: "05",
-    title: "SEO & Digital",
-    description: "Improve discoverability and create a stronger online presence.",
+    title: "SEO & Digital Marketing",
+    description: "Technical SEO, on-page improvements and a stronger online presence for local businesses.",
     tags: ["SEO", "Analytics"]
   },
   {
     icon: ShieldCheck,
     number: "06",
-    title: "IT Consulting",
-    description: "Practical technical guidance to help your business choose the right solutions.",
+    title: "Custom Business Software",
+    description: "Custom web applications and software designed around your organization's real requirements.",
     tags: ["Architecture", "Security"]
   }
 ];
@@ -82,6 +82,98 @@ const projects = [
     icon: Globe
   }
 ];
+
+
+const SITE_URL = "https://sidhiwebsolution.vercel.app/"; // Replace with your real domain
+
+function SEOHead() {
+  useEffect(() => {
+    const title = "Website Development, School ERP & Billing Software | Sidhi Digital Studio";
+    const description =
+      "Sidhi Digital Studio offers website development, school ERP, hospital management software, billing software and custom business applications in Kushinagar, Maharajganj, Uttar Pradesh and Gopalganj, Bihar.";
+
+    document.title = title;
+
+    const setMeta = (key, value, attribute = "name") => {
+      let element = document.head.querySelector(`meta[${attribute}="${key}"]`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, key);
+        document.head.appendChild(element);
+      }
+      element.setAttribute("content", value);
+    };
+
+    setMeta("description", description);
+    setMeta("robots", "index, follow");
+    setMeta("author", "Sidhi Digital Studio");
+    setMeta("theme-color", "#7356e8");
+    setMeta("og:type", "website", "property");
+    setMeta("og:title", title, "property");
+    setMeta("og:description", description, "property");
+    setMeta("og:site_name", "Sidhi Digital Studio", "property");
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
+
+    // Add canonical only after replacing the placeholder with the real public URL.
+    if (!SITE_URL.includes("YOUR-VERCEL-DOMAIN")) {
+      let canonical = document.head.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        document.head.appendChild(canonical);
+      }
+      canonical.href = SITE_URL.replace(/\/$/, "") + "/";
+      setMeta("og:url", canonical.href, "property");
+    }
+
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Sidhi Digital Studio",
+      description,
+      telephone: "+919919366390",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Sapaha Road, Kasia Bazaar",
+        addressLocality: "Kasia",
+        addressRegion: "Uttar Pradesh",
+        postalCode: "274402",
+        addressCountry: "IN"
+      },
+      areaServed: [
+        { "@type": "City", name: "Kushinagar" },
+        { "@type": "AdministrativeArea", name: "Maharajganj, Uttar Pradesh" },
+        { "@type": "City", name: "Gopalganj, Bihar" }
+      ],
+      serviceType: [
+        "Website Development",
+        "School ERP Software",
+        "Hospital Management Software",
+        "Billing Software",
+        "Custom Business Software",
+        "Search Engine Optimization"
+      ],
+      sameAs: []
+    };
+
+    let script = document.querySelector('script[data-sidhi-schema="business"]');
+    if (!script) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.dataset.sidhiSchema = "business";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
+
+    return () => {
+      // Leave SEO metadata and JSON-LD in place while this single-page app is mounted.
+    };
+  }, []);
+
+  return null;
+}
 
 function WhatsAppButton({ children = "Meet us on WhatsApp", className = "" }) {
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -211,7 +303,9 @@ function About() {
 
       <div className="about-content">
         <p>
-          SIDHI one of the top website design and web development Company With over 10 years of experience team, our expert team specializes in Web development and UI/UX Designing and App development with Search engine Optimization.
+          Sidhi Digital Studio provides website design, web development, school ERP,
+          hospital management software, billing solutions and custom software
+          for local businesses and institutions.
         </p>
         <p>
           We are a digital agency focused on creating useful, modern and
@@ -318,6 +412,50 @@ function Portfolio() {
   );
 }
 
+
+function LocalServiceAreas() {
+  const locations = [
+    {
+      name: "Kushinagar, Uttar Pradesh",
+      text: "Website development, school ERP, hospital software and billing solutions for local businesses and institutions."
+    },
+    {
+      name: "Maharajganj, Uttar Pradesh",
+      text: "Business websites and custom software for schools, clinics, retailers and growing organizations."
+    },
+    {
+      name: "Gopalganj, Bihar",
+      text: "Website design, business software and digital solutions for local companies and institutions."
+    }
+  ];
+
+  return (
+    <section className="section-wrap section-space local-seo" aria-labelledby="local-service-heading">
+      <div className="section-heading">
+        <p className="eyebrow">LOCAL SERVICE AREAS</p>
+        <h2 id="local-service-heading">IT & Software Services Near You</h2>
+        <p>Talk to Sidhi Digital Studio about your project in these areas.</p>
+      </div>
+      <div className="services-grid">
+        {locations.map((location) => (
+          <article className="service-card" key={location.name}>
+            <div className="service-top">
+              <div className="service-icon"><Globe size={23} /></div>
+            </div>
+            <h3>{location.name}</h3>
+            <p>{location.text}</p>
+            <a className="text-link" href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+              `Hello Sidhi Digital Studio, I need website or software services in ${location.name}.`
+            )}`} target="_blank" rel="noopener noreferrer">
+              Ask about services <ArrowUpRight size={15} />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section className="contact section-wrap section-space" id="contact">
@@ -345,7 +483,7 @@ function Contact() {
             <div className="contact-icon"><Globe size={21} /></div>
             <div>
               <span>OUR OFFICE</span>
-              <p>Sapaha Rd, Kasia Bazaar, Kushinagar, Uttar Pradesh 274402</p>
+              <p>{OFFICE_ADDRESS}</p>
               
             </div>
           </div>
@@ -372,12 +510,14 @@ function Footer() {
 export default function App() {
   return (
     <>
+      <SEOHead />
       <Navbar />
       <main>
         <Hero />
         <About />
         <Services />
         <Portfolio />
+        <LocalServiceAreas />
         <Contact />
       </main>
       <Footer />
